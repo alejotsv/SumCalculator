@@ -13,6 +13,7 @@ public class SumCalculator extends JFrame implements FocusListener {
         setSize(dim);
         JPanel calc = new JPanel();
         JTextField first = new JTextField(6);
+        first.addFocusListener(this);
         JLabel plusSign = new JLabel("+");
         JTextField second = new JTextField(6);
         JLabel equalSign = new JLabel("=");
@@ -30,11 +31,13 @@ public class SumCalculator extends JFrame implements FocusListener {
 
     @Override
     public void focusGained(FocusEvent focusEvent) {
-
+        System.out.println("Focus gained");
+        System.out.println(focusEvent.getSource());
     }
 
     @Override
     public void focusLost(FocusEvent focusEvent) {
-
+        System.out.println("Focus lost");
+        System.out.println(focusEvent.getSource());
     }
 }
