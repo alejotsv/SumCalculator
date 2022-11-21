@@ -11,6 +11,11 @@ public class SumCalculator extends JFrame implements FocusListener {
     SumCalculator(String title){
         super(title);
         setSize(dim);
+        JPanel calc = new JPanel();
+        JTextField first = new JTextField(6);
+
+        calc.add(first);
+        add(calc);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
