@@ -13,8 +13,15 @@ public class SumCalculator extends JFrame implements FocusListener {
         setSize(dim);
         JPanel calc = new JPanel();
         JTextField first = new JTextField(6);
-
+        JLabel plusSign = new JLabel("+");
+        JTextField second = new JTextField(6);
+        JLabel equalSign = new JLabel("=");
+        JTextField result = new JTextField(8);
         calc.add(first);
+        calc.add(plusSign);
+        calc.add(second);
+        calc.add(equalSign);
+        calc.add(result);
         add(calc);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
