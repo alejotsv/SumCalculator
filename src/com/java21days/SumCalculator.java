@@ -46,6 +46,7 @@ public class SumCalculator extends JFrame implements FocusListener {
 
     @Override
     public void focusLost(FocusEvent focusEvent) {
+        System.out.println(focusEvent.getComponent());
         try {
             sum = Integer.parseInt(first.getText()) + Integer.parseInt(second.getText());
             sumString = String.valueOf(sum);
