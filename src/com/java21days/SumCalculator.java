@@ -25,11 +25,13 @@ public class SumCalculator extends JFrame implements FocusListener {
         sumString = "0";
         result = new JTextField(sumString, 8);
         result.setEditable(false);
+        error = new JLabel();
         calc.add(first);
         calc.add(plusSign);
         calc.add(second);
         calc.add(equalSign);
         calc.add(result);
+        calc.add(error);
         add(calc);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -48,8 +50,10 @@ public class SumCalculator extends JFrame implements FocusListener {
             sum = Integer.parseInt(first.getText()) + Integer.parseInt(second.getText());
             sumString = String.valueOf(sum);
             result.setText(sumString);
+            error.setText("");
         } catch (NumberFormatException nfe) {
             System.out.println(nfe.getMessage());
+            error.setText("Valid numbers only");
             first.setText("0");
             second.setText("0");
             result.setText("0");
