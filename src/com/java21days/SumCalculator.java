@@ -7,17 +7,21 @@ import java.awt.event.FocusListener;
 
 public class SumCalculator extends JFrame implements FocusListener {
     Dimension dim = new Dimension(300, 300);
+    JTextField first, second, result;
 
     SumCalculator(String title){
         super(title);
         setSize(dim);
         JPanel calc = new JPanel();
-        JTextField first = new JTextField(6);
+        first = new JTextField("0", 6);
         first.addFocusListener(this);
         JLabel plusSign = new JLabel("+");
-        JTextField second = new JTextField(6);
+        second = new JTextField("0", 6);
         JLabel equalSign = new JLabel("=");
-        JTextField result = new JTextField(8);
+        int sum = Integer.parseInt(first.getText()) + Integer.parseInt(second.getText());
+        String sumString = String.valueOf(sum);
+        result = new JTextField(sumString, 8);
+        result.setEditable(false);
         calc.add(first);
         calc.add(plusSign);
         calc.add(second);
@@ -38,6 +42,7 @@ public class SumCalculator extends JFrame implements FocusListener {
     @Override
     public void focusLost(FocusEvent focusEvent) {
         System.out.println("Focus lost");
-        System.out.println(focusEvent.getSource());
+        System.out.println(focusEvent.getClass());
+        System.out.println();
     }
 }
